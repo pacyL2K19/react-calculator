@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
+const Calculator = () => (
+  <div>Calculator</div>
 );
 
-reportWebVitals();
+ReactDOM.render(
+  <Calculator />,
+  document.getElementById('root'),
+);
