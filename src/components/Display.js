@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Display extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
+const Display = () => {
 
-  render() {
     const { result } = this.props;
     return (
       <div>
         {result}
       </div>
     );
-  }
 }
 
 Display.propTypes = {

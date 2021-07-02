@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.Component {
-  // eslint-disable-next-line class-methods-use-this
-  render() {
+const Button = () => {
     return (
       <div>{this.props.name}</div>
 
     );
-  }
 }
 
 Button.propTypes = {
