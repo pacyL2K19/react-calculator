@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './components/App';
 
 const Calculator = () => (
-  <div>Calculator</div>
+  <App />
 );
 
 ReactDOM.render(
