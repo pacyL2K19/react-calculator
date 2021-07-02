@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-export default function ButtonPanel() {
+const ButtonPanel = () => {
   return (
     <div>
       <div>
@@ -36,3 +36,5 @@ export default function ButtonPanel() {
     </div>
   );
 }
+
+export default ButtonPanel
