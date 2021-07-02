@@ -2,13 +2,11 @@ import React from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 
-const App = () => {
-  return (
-    <>
-      <Display />
-      <ButtonPanel />
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Display />
+    <ButtonPanel />
+  </>
+);
 
 export default App;
