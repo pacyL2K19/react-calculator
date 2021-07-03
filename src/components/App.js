@@ -4,7 +4,7 @@ import Display from './Display';
 import calculate from '../logic/calculate';
 
 const App = () => {
-  calculate();
+  calculate({ total: 0, operation: '+', next: 0 });
   return (
     <>
       <Display />
