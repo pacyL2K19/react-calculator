@@ -1,7 +1,9 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
-  background: #cecbc9;
+  background-image: url(./assets/065940d761_40780_maths-wallpoper-wikimedia-dp.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .main-box {
@@ -9,6 +11,7 @@ body {
   padding: 70px 10px 10px 10px;
   margin: 10px;
   border-radius: 10px;
+  box-shadow: 0 0 20px white;
 }
 
 #root {
