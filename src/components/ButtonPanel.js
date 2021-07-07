@@ -16,7 +16,28 @@ const ButtonPanel = (props) => {
     <div>
       <div>
         {
-          symbols.map(btn => (
+          symbols.map((btn) => (
+            <Button key={btn} name={btn} clickHandler={handleClick} />
+          ))
+        }
+      </div>
+      <div>
+        {
+          firstGroup.map((btn) => (
+            <Button key={btn} name={btn} clickHandler={handleClick} />
+          ))
+        }
+      </div>
+      <div>
+        {
+          secondGroup.map((btn) => (
+            <Button key={btn} name={btn} clickHandler={handleClick} />
+          ))
+        }
+      </div>
+      <div>
+        {
+          thirdGroup.map((btn) => (
             <Button key={btn} name={btn} clickHandler={handleClick} />
           ))
         }
@@ -27,7 +48,7 @@ const ButtonPanel = (props) => {
         <Button name="%" clickHandler={handleClick} />
         <Button name="/" clickHandler={handleClick} />
       </div> */}
-      <div>
+      {/* <div>
         <Button name="7" clickHandler={handleClick} />
         <Button name="8" clickHandler={handleClick} />
         <Button name="9" clickHandler={handleClick} />
@@ -49,7 +70,7 @@ const ButtonPanel = (props) => {
         <Button name="0" clickHandler={handleClick} />
         <Button name="." clickHandler={handleClick} />
         <Button name="=" clickHandler={handleClick} />
-      </div>
+      </div> */}
     </div>
   );
 };
