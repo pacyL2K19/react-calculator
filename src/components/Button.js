@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ name, clickHandler }) => {
-  const symbols = ['AC', '+/-', '%', '/', 'X', '-', '+'];
+  const symbols = ['AC', '+/-', '%', '/', 'X', '−', '+'];
   const handleClick = (name) => {
     clickHandler(name);
   };
