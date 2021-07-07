@@ -7,14 +7,26 @@ const ButtonPanel = (props) => {
     props.clickHandler(name);
   };
 
+  const symbols = ['AC', '+/-', '%', '/'];
+  const firstGroup = ['7', '8', '9', 'X'];
+  const secondGroup = ['4', '5', '6', '-'];
+  const thirdGroup = ['1', '2', '3', '+'];
+
   return (
     <div>
       <div>
+        {
+          symbols.map(btn => (
+            <Button key={btn} name={btn} clickHandler={handleClick} />
+          ))
+        }
+      </div>
+      {/* <div>
         <Button name="AC" clickHandler={handleClick} />
         <Button name="+/-" clickHandler={handleClick} />
         <Button name="%" clickHandler={handleClick} />
         <Button name="/" clickHandler={handleClick} />
-      </div>
+      </div> */}
       <div>
         <Button name="7" clickHandler={handleClick} />
         <Button name="8" clickHandler={handleClick} />
