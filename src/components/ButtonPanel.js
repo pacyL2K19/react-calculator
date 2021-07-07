@@ -42,6 +42,11 @@ const ButtonPanel = (props) => {
           ))
         }
       </div>
+      <div>
+        <Button name="0" clickHandler={handleClick} />
+        <Button name="." clickHandler={handleClick} />
+        <Button name="=" clickHandler={handleClick} />
+      </div>
     </div>
   );
 };
