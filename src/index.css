@@ -4,6 +4,13 @@ body {
   background: #cecbc9;
 }
 
+.main-box {
+  background-color: black;
+  padding: 100px 10px 10px 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
 #root {
   width: fit-content;
   margin: auto;
