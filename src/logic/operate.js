@@ -1,8 +1,8 @@
 import Big from 'big.js';
 
-const operate = (firstNumber, secondNumber, operation) => {
-  const nbrOne = Big(firstNumber);
-  const nbrTwo = Big(secondNumber);
+const operate = (numberOne, numberTwo, operation) => {
+  const nbrOne = Big(numberOne);
+  const nbrTwo = Big(numberTwo);
   let result = 0;
 
   switch (operation) {
@@ -10,16 +10,16 @@ const operate = (firstNumber, secondNumber, operation) => {
       result = nbrOne.plus(nbrTwo);
       break;
 
-    case '-':
+    case '−':
       result = nbrOne.minus(nbrTwo);
       break;
 
-    case 'x':
+    case 'X':
       result = nbrOne.times(nbrTwo);
       break;
 
     case '%':
-      result = nbrOne.mod(nbrTwo);
+      result = nbrOne.div(nbrTwo);
       break;
 
     case '/':
@@ -27,7 +27,7 @@ const operate = (firstNumber, secondNumber, operation) => {
       break;
 
     case '+/-':
-      result = secondNumber ? nbrTwo * -1 : nbrOne * -1;
+      result = numberTwo ? nbrTwo * -1 : nbrOne * -1;
       break;
 
     case 'AC':
@@ -41,7 +41,7 @@ const operate = (firstNumber, secondNumber, operation) => {
     default:
       break;
   }
-  return result;
+  return result.toString();
 };
 
 export default operate;

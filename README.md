@@ -17,6 +17,7 @@ Additional description about the project and its features.
 ## Live Demo
 
 [Live Demo Link](https://calculator-pacifique.herokuapp.com/)
+![screenshot](./src/assets/calcul.PNG)
 
 ## Getting Started
 
