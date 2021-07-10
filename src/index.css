@@ -1,17 +1,19 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
-  background-image: url(./assets/065940d761_40780_maths-wallpoper-wikimedia-dp.jpg);
+
+  /* background-image: url(./assets/065940d761_40780_maths-wallpoper-wikimedia-dp.jpg); */
   background-position: center;
   background-size: cover;
 }
 
 .main-box {
-  background-color: black;
+  /* background-color: black; */
   padding: 70px 10px 10px 10px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 20px white;
+
+  /* box-shadow: 0 0 20px white; */
 }
 
 #root {
@@ -47,7 +49,7 @@ body {
     inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
 }
 
-.button-equal {
+.button-zero {
   width: 170px;
   border-radius: 40px;
 }
@@ -100,7 +102,8 @@ body {
 
 .result {
   margin: 0 20px 20px 0;
-  background-color: transparent;
+  background-color: gray;
+  height: 100px;
   color: white;
   font-size: 72px;
   box-shadow:
