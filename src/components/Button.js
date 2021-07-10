@@ -12,7 +12,7 @@ const Button = ({
     return '';
   };
   return (
-    name === '=' ? <div className="button" onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div> : <div className={color ? 'symbol' : `button ${addClass()}`} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div>
+    name === '=' ? <div className="button" style={{backgroundColor: color !== "" ? color : "orange"}} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div> : <div className={color ? 'symbol' : `button ${addClass()}`} style={{backgroundColor: color !== "" ? color : "orange"}} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div>
   );
 };
 
