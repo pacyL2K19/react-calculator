@@ -10,7 +10,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^27.0.6",
     "babel-preset-stage-0": "^6.24.1",
     "big.js": "^5.2.2",
     "bootstrap": "^5.0.2",
@@ -71,5 +70,10 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.19.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
   }
 }
