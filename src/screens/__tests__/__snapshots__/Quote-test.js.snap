@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote page should match the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-2"
+>
+  <p
+    align="center"
+    className="makeStyles-textParagraph-1"
+  >
+    Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding. –William Paul Thurston
+  </p>
+</div>
+`;
