@@ -2,23 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-  name, clickHandler, color, wide,
+  name, color, clickHandler, wide,
 }) => {
   const handleClick = (name) => {
     clickHandler(name);
   };
-  const addClass = () => {
-    if (wide) return 'button-zero';
-    return '';
-  };
-  return (
-    name === '=' ? <div className="button" style={{backgroundColor: color !== "" ? color : "orange"}} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div> : <div className={color ? 'symbol' : `button ${addClass()}`} style={{backgroundColor: color !== "" ? color : "orange"}} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div>
-  );
-};
 
-Button.defaultProps = {
-  wide: false,
-  color: '',
+  const colorBtn = (wideBool) => {
+    if (wideBool) {
+      return `${color} button-zero`;
+    }
+    return `${color}`;
+  };
+
+  return <div className={colorBtn(wide)} onClick={() => handleClick(name)}><span className="text">{name}</span></div>;
 };
 
 Button.propTypes = {
@@ -26,6 +23,11 @@ Button.propTypes = {
   clickHandler: PropTypes.func.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  color: 'button btn-primary',
+  wide: false,
 };
 
 export default Button;
