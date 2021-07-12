@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [drawer, setDrawer] = useState({ right: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -46,13 +46,13 @@ const Header = () => {
   );
 
   return (
-    <div width={1} className={classes.root}>
+    <div width={1}>
       <AppBar position="static">
         <Toolbar>
           <IconButton onClick={toggleDrawer('right', true)} edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6">
             Math Magicians
           </Typography>
           <Box
