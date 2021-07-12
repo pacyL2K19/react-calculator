@@ -15,7 +15,7 @@ const Button = ({
     return `${color}`;
   };
 
-  return <div className={colorBtn(wide)} onClick={() => handleClick(name)}><span className="text">{name}</span></div>;
+  return <div className={colorBtn(wide)} onClick={() => handleClick(name)} onKeyDown={() => handleClick(name)} tabIndex={0} role="button"><span className="text">{name}</span></div>;
 };
 
 Button.propTypes = {

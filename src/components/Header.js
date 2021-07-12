@@ -28,17 +28,17 @@ const Header = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button key={'home'}>
-          <Link  to='/'>HOME</Link>
+        <ListItem button key="home">
+          <Link to="/">HOME</Link>
         </ListItem>
-      <Divider />
-        <ListItem button key={'calculator'}>
-          <Link  to='/calculator'>CALCULATOR</Link>
+        <Divider />
+        <ListItem button key="calculator">
+          <Link to="/calculator">CALCULATOR</Link>
         </ListItem>
-      <Divider />
+        <Divider />
 
-        <ListItem button key={'quote'}>
-          <Link  to='/quote'>QUOTE</Link>
+        <ListItem button key="quote">
+          <Link to="/quote">QUOTE</Link>
         </ListItem>
       </List>
 
@@ -47,32 +47,35 @@ const Header = () => {
 
   return (
     <div width={1} className={classes.root}>
-        <AppBar position="static">
-            <Toolbar>
-            <IconButton onClick={toggleDrawer('right', true)} edge="start"  color="inherit" aria-label="menu">
-                <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton onClick={toggleDrawer('right', true)} edge="start" color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
             Math Magicians
-            </Typography>
-            <Box justifyContent="flex-end" display={{
+          </Typography>
+          <Box
+            justifyContent="flex-end"
+            display={{
               xs: 'none', sm: 'block', md: 'block', lg: 'block', xl: 'block',
-            }}>
-                <Link  to='/'>HOME</Link>
-                <Link  color="inherit" to='/calculator'>CALCULATOR</Link>
-                <Link  color="inherit" to='/quote'>QUOTE</Link>
-            </Box>
-            </Toolbar>
-        </AppBar>
-        <SwipeableDrawer
-            anchor={'right'}
-            open={drawer.right}
-            onClose={toggleDrawer('right', false)}
-            onOpen={toggleDrawer('right', true)}
+            }}
           >
-          {list('right')}
+            <Link to="/">HOME</Link>
+            <Link color="inherit" to="/calculator">CALCULATOR</Link>
+            <Link color="inherit" to="/quote">QUOTE</Link>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <SwipeableDrawer
+        anchor="right"
+        open={drawer.right}
+        onClose={toggleDrawer('right', false)}
+        onOpen={toggleDrawer('right', true)}
+      >
+        {list('right')}
 
-          </SwipeableDrawer>
+      </SwipeableDrawer>
     </div>
   );
 };
