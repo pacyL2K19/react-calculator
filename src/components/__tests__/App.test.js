@@ -12,10 +12,10 @@ describe('The App component of the Calculator screen', () => {
     wrapper = shallow(<App />);
     expect(wrapper.find('ButtonPanel').length).toBe(1);
   });
-  describe("Click events on buttons, display text in the board", () => {
-    beforeEach(() => wrapper = mount(<App />))
+  describe('Click events on buttons, display text in the board', () => {
+    beforeEach(() => wrapper = mount(<App />));
     it('Always starts with 0 displayed in the board', () => {
-      expect(wrapper.find('Display').text()).toBe('0')
-    })
-  })
+      expect(wrapper.find('Display').text()).toBe('0');
+    });
+  });
 });

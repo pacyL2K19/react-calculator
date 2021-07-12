@@ -10,6 +10,6 @@ describe('The button component', () => {
   });
   it('Displays the name in the button component', () => {
     wrapper = shallow(<Button name="+" clickHandler={() => {}} />);
-    expect(wrapper.text()).toBe("+");
+    expect(wrapper.text()).toBe('+');
   });
 });
