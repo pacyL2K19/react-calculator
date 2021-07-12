@@ -7,11 +7,6 @@ const ButtonPanel = (props) => {
     props.clickHandler(name);
   };
 
-  // const symbols = ['AC', '+/-', '%', '/'];
-  // const firstGroup = ['7', '8', '9', 'X'];
-  // const secondGroup = ['4', '5', '6', '−'];
-  // const thirdGroup = ['1', '2', '3', '+'];
-
   return (
     <div>
       <div>
