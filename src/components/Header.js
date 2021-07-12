@@ -68,9 +68,11 @@ const Header = () => {
     <div width={1} className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton onClick={toggleDrawer('right', true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          <div className="d-flex d-md-none">
+            <IconButton onClick={toggleDrawer('right', true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+          </div>
           <Typography variant="h6" className={classes.title}>
             Math Magicians
           </Typography>

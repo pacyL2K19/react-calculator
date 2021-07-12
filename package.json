@@ -13,6 +13,7 @@
     "babel-jest": "^26.6.3",
     "babel-preset-stage-0": "^6.24.1",
     "big.js": "^5.2.2",
+    "bootstrap": "^5.0.2",
     "enzyme": "^3.11.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
