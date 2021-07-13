@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
-import Home from '../Home';
 import { render } from '@testing-library/react';
+import Home from '../Home';
 import '@testing-library/jest-dom';
 
 describe('Home page', () => {
@@ -16,4 +16,3 @@ it('Should renders Home title', () => {
   const headerText = getByText(/Welcome to our page!/);
   expect(headerText).toBeInTheDocument();
 });
-
