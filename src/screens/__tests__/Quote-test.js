@@ -1,9 +1,10 @@
-import renderer from 'react-test-renderer';
+import React from 'react'
+import { render } from '@testing-library/react';
 import Quote from '../Quote';
 
 describe('Quote page', () => {
   it('should match the snapshot', () => {
-    const tree = renderer.create(<Quote />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Quote />);
+    expect(asFragment(<Quote />)).toMatchSnapshot();
   });
 });
