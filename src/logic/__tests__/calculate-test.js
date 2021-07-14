@@ -6,14 +6,29 @@ describe('all calculator buttons works correctly', () => {
     expect(calculate(data, '5').total).toBe('5');
   });
 
+  it('click of any button should display the correct number', () => {
+    const data = { total: '0', operation: null, next: null };
+    expect(calculate(data, '5').total).not.toBe('6');
+  });
+
   it('AC resets calculator state', () => {
     const data = { total: '3', operation: '+', next: '3' };
     expect(calculate(data, 'AC')).toEqual({ total: '0', next: null, operation: null });
   });
 
+  it('AC resets calculator state', () => {
+    const data = { total: '3', operation: '+', next: '3' };
+    expect(calculate(data, 'AC')).not.toEqual({ total: 0, next: null, operation: null });
+  });
+
   it('+/- clicked', () => {
     const data = { total: '9', operation: '+/-', next: null };
     expect(calculate(data, '+/-')).toEqual({ total: -9, next: null, operation: null });
+  });
+
+  it('+/- clicked', () => {
+    const data = { total: '9', operation: '+/-', next: null };
+    expect(calculate(data, '+/-')).not.toEqual({ total: 9, next: null, operation: null });
   });
 
   it('% clicked', () => {
@@ -29,6 +44,11 @@ describe('all calculator buttons works correctly', () => {
   it('X symbol clicked', () => {
     const data = { total: '6', operation: 'X', next: '2' };
     expect(calculate(data, 'X')).toEqual({ total: '6', next: '2', operation: 'X' });
+  });
+
+  it('X clicked', () => {
+    const data = { total: '6', operation: 'X', next: '2' };
+    expect(calculate(data, 'X')).not.toEqual({ total: '12', next: '2', operation: 'X' });
   });
 
   it('− symbol clicked', () => {
