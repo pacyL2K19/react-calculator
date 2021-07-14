@@ -1,82 +1,45 @@
 import operate from './operate';
 
-const calculate = (data, name) => {
-  const { total, operation, next } = data;
-  let res;
-
-  switch (name) {
-    case '+/-':
-      if (total.includes('-')) {
-        res = (prevState) => ({ total: (parseFloat(prevState.total) * -1).toString() });
-      } else {
-        res = ((prevState) => ({ total: '-'.concat(prevState.total) }));
-      }
-      return res;
-    case 'AC':
-      res = ({
-        total: '0',
-        next: '',
-        operation: '',
-      });
-      return res;
-    case '=':
-      if (parseFloat(total, 10) !== 0 && operation !== '=' && operation !== '' && operation !== '%') {
-        res = ({
-          total: operate(parseFloat(total, 10), parseFloat(next, 10), operation),
-          next: '',
-          operation: '=',
-        });
-      }
-      return res;
-    case '+':
-    case '−':
-    case '/':
-    case 'X':
-    case '@':
-      if (parseFloat(total, 10) !== 0) {
-        return ({ operation: name });
-      }
-      break;
-    case '%':
-      res = ({
-        total: operate(parseFloat(total, 10), '100', '%'),
-        next: '',
-        operation: '%',
-      });
-      return res;
-    case '1':
-    case '2':
-    case '3':
-    case '4':
-    case '5':
-    case '6':
-    case '7':
-    case '8':
-    case '9':
-    case '0':
-      if (operation !== '') {
-        return ((prevState) => ({ next: prevState.next + name }));
-      }
-      if (total === '0' && operation === '') {
-        res = { total: name };
-      } else if (next === '' && operation === '') {
-        res = ((prevState) => ({ total: prevState.total + name }));
-      }
-      return res;
-    case '.':
-      if (operation !== '' && !next.includes('.')) {
-        return ((prevState) => ({ next: prevState.next + name }));
-      }
-      if (total === '0' && operation === '') {
-        res = ({ total: name });
-      } else if (next === '' && operation === '' && !total.includes('.')) {
-        res = ((prevState) => ({ total: prevState.total + name }));
-      }
-      return res;
-    default:
-      break;
+const calculate = (data, buttonName) => {
+  let { total, next, operation } = data;
+  const operands = ['+', 'X', '−', '÷'];
+  const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  if (buttonName === 'AC') {
+    [total, next, operation] = ['0', null, null];
   }
-  return null;
+  if (buttonName === '+/-') {
+    if (total) (total *= -1);
+    if (next) (next *= -1);
+    operation = null;
+  }
+  if (buttonName === '%') {
+    if (total) next = (0.01 * total).toString();
+  }
+  if (buttonName === '=') {
+    if (total && next && operation) {
+      total = operate(total, next, operation);
+      next = null;
+      operation = null;
+    }
+  }
+  if (operands.includes(buttonName)) {
+    if (total) operation = buttonName;
+  } else if (operation && nums.includes(buttonName)) {
+    next = next ? next + buttonName : buttonName;
+  } else if (total && nums.includes(buttonName)) {
+    if (total === '0') {
+      total = buttonName;
+    } else {
+      total = buttonName + total;
+    }
+  } else if (nums.includes(buttonName)) {
+    total = total ? total + buttonName : buttonName;
+  } else if (!next && !operation && buttonName === '.') {
+    total = total.includes(buttonName) ? total : total + buttonName;
+  } else if (total && operation && buttonName === '.') {
+    next = next.includes(buttonName) ? next : next + buttonName;
+  }
+  return { total, next, operation };
 };
 
 export default calculate;

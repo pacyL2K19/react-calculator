@@ -17,7 +17,7 @@ Additional description about the project and its features.
 ## Live Demo
 
 [Live Demo Link](https://calculator-pacifique.herokuapp.com/)
-![screenshot](./src/assets/calcul.PNG)
+![screenshot](./src/assets/calc.gif)
 
 ## Getting Started
 
@@ -32,6 +32,11 @@ $ npm start
 ```
 
 Open `http://localhost:3000` to view running project in the browser.
+
+> Run the unit tests with
+```s
+$ npm run test
+```
 
 ## Author
 

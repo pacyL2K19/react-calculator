@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Display = ({ result }) => (
-  <div className="result text">
+
+  <div className="element text">
     {result}
   </div>
 );

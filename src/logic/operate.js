@@ -22,7 +22,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = nbrOne.div(nbrTwo);
       break;
 
-    case '/':
+    case '÷':
       result = nbrOne.div(nbrTwo);
       break;
 

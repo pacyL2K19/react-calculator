@@ -7,44 +7,35 @@ const ButtonPanel = (props) => {
     props.clickHandler(name);
   };
 
-  const symbols = ['AC', '+/-', '%', '/'];
-  const firstGroup = ['7', '8', '9', 'X'];
-  const secondGroup = ['4', '5', '6', '−'];
-  const thirdGroup = ['1', '2', '3', '+'];
-
   return (
     <div>
       <div>
-        {
-          symbols.map((btn) => (
-            <Button key={btn} name={btn} clickHandler={handleClick} />
-          ))
-        }
+        <Button name="AC" clickHandler={handleClick} />
+        <Button name="+/-" clickHandler={handleClick} />
+        <Button name="%" clickHandler={handleClick} />
+        <Button name="÷" clickHandler={handleClick} />
       </div>
       <div>
-        {
-          firstGroup.map((btn) => (
-            <Button key={btn} name={btn} clickHandler={handleClick} />
-          ))
-        }
+        <Button name="7" color="button" clickHandler={handleClick} />
+        <Button name="8" color="button" clickHandler={handleClick} />
+        <Button name="9" color="button" clickHandler={handleClick} />
+        <Button name="X" clickHandler={handleClick} />
       </div>
       <div>
-        {
-          secondGroup.map((btn) => (
-            <Button key={btn} name={btn} clickHandler={handleClick} />
-          ))
-        }
+        <Button name="4" color="button" clickHandler={handleClick} />
+        <Button name="5" color="button" clickHandler={handleClick} />
+        <Button name="6" color="button" clickHandler={handleClick} />
+        <Button name="−" clickHandler={handleClick} />
       </div>
       <div>
-        {
-          thirdGroup.map((btn) => (
-            <Button key={btn} name={btn} clickHandler={handleClick} />
-          ))
-        }
+        <Button name="1" color="button" clickHandler={handleClick} />
+        <Button name="2" color="button" clickHandler={handleClick} />
+        <Button name="3" color="button" clickHandler={handleClick} />
+        <Button name="+" clickHandler={handleClick} />
       </div>
       <div>
-        <Button name="0" clickHandler={handleClick} />
-        <Button name="." clickHandler={handleClick} />
+        <Button name="0" wide color="button" clickHandler={handleClick} />
+        <Button name="." color="button" clickHandler={handleClick} />
         <Button name="=" clickHandler={handleClick} />
       </div>
     </div>
