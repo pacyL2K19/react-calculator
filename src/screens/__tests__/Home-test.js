@@ -1,18 +1,10 @@
-import renderer from 'react-test-renderer';
+import React from 'react'
 import { render } from '@testing-library/react';
 import Home from '../Home';
-import '@testing-library/jest-dom';
 
-describe('Home page', () => {
+describe('Snapshot Home page', () => {
   it('should match the snapshot', () => {
-    const tree = renderer.create(<Home />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Home />)
+    expect(asFragment(<Home/>)).toMatchSnapshot();
   });
-});
-
-// Test rendering Home components
-it('Should renders Home title', () => {
-  const { getByText } = render(<Home />);
-  const headerText = getByText(/Welcome to our page!/);
-  expect(headerText).toBeInTheDocument();
 });
